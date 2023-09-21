@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+       <title>AgroInTheCyt</title>
+       <h:outputStylesheet name="css/estilos.css"/>
+    </h:head>
+    <h:body styleClass="body">
+       <h:panelGroup styleClass="header">
+               <h:panelGroup styleClass="logo">
+                 <img src="http://localhost/interfasweb/assets/img/loogoagro.png" alt="logo de la compañia " 
+                  class="img" />   
+               </h:panelGroup>
+        <h1> INICIAR SESION</h1>
+        <a href="index.xhtml" syleClass="btn"><button>INICIO</button></a>
+        
+    </h:panelGroup>
+    <section>
+        <h:panelGroup styleClass="content">
+            <h1>AGRO IN THE CITY</h1>
+            <p syleClass="par"/>En este apartado usted podrá iniciar sesión con su número de identificación el tipo de usuario el id de
+                 usuario que le suministro el administrador, la contraseña que usted  entrego al administrador.<br/>
+                 <br/>
+                  Tenga en cuenta que cualquiera de estas cuentas no tiene restricción alguna y se mantiene 
+                  verificando constantemente, por lo tanto cualquier movimiento será revisado a detalle. <br/>
+        </h:panelGroup>
+        <br/>
+        <h:panelGroup styleClass="form-boxlog">
+            <h:panelGroup>
+                <h:form>
+                    <h:panelGrid columns="1">
+                    <h:messages style="color: red"/>
+                    <h1>INICIAR SESION</h1>
+                    <h:panelGroup styleClass="inputbox">
+                        <h:inputText value="#{controllSession.empleado.IDEmp}" id="idemp" styleClass="input" requiredMessage="Ambos Campos son Requeridos" required="true" />
+                        <h:outputLabel styleClass="label">Numero de Identificacion</h:outputLabel>
+                    </h:panelGroup>
+                    <h:panelGroup styleClass="inputbox">
+                        <h:inputSecret value="#{controllSession.empleado.contraEmp}" styleClass="input" required="true" requiredMessage=""/>
+                        <h:outputLabel styleClass="label">Contraseña</h:outputLabel>
+                    </h:panelGroup>
+                    <h:panelGroup>
+                        <h:commandButton styleClass="btnform" type="reset" value="Borrar"/> 
+                        <h:commandButton action="#{controllSession.validarEmpleado()}" styleClass="btnform" value="Iniciar Sesion  "/>
+                        
+                    </h:panelGroup>              
+                  </h:panelGrid> 
+                </h:form>
+            </h:panelGroup>
+        </h:panelGroup>
+    </section>
+    </h:body>
+</html>
+
